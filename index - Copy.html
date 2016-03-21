@@ -19,7 +19,7 @@ layout: default
     {% endif %}
 
     <h1 class="post-title">
-      <a href="{{ post.url | replace: '//', '/' | prepend: site.baseurl | prepend: site.url |  }}">
+      <a href="{{ post.url | append: '/' | replace: '//', '/' | prepend: site.baseurl | prepend: site.url |  }}">
         {{ post.title }}
       </a>
     </h1>
