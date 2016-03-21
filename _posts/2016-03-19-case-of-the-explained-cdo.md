@@ -5,7 +5,7 @@ date:   2016-03-19 15:37:00
 description: How I used ProcMon to solve a CDO Email Issue 
 categories:
 - Root Cause Fixes
-permalink: case-of-the-unexplained-CDO-email-attachments
+permalink: 2016-03-19-case-of-the-unexplained-CDO-email-attachments
 ---
 
 This blog post explains how I solved an issue we had on one of our production servers just recently with CDO and email attachments.
