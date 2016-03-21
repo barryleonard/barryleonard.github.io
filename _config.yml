@@ -5,8 +5,8 @@ email: Barry.Leonard[@}Outlook.com
 description: > # this means to ignore newlines until "baseurl:"
   Hi, I’m an IT professional working in Central London. 
   These are the things I'm working on.
-baseurl: "/blog" # the subpath of your site, e.g. /blog/
-url: "http://127.0.0.1:4000" # the base hostname & protocol for your site
+baseurl: # "/blog" # the subpath of your site, e.g. /blog/
+url: "http://www.barryleonard.co.uk" # the base hostname & protocol for your site
 logourl: /assets/images/logo.png # Site logo
 author: "Barry Leonard"
 author_thumbnail: "/assets/images/avatar.jpg" # Author avatar
