@@ -83,8 +83,8 @@ sBody = "This is a 'SendMail' Unit Test Email"
 
 What I found when I ran this code was the following:
 
-![placeholder](/blog/assets/images/2016-03-19-procmon.png "Output in ProcMon")
-![placeholder](/blog/assets/images/2016-03-19-windbg.png/800x400 "Output in WinDbg")
+![placeholder](/assets/images/2016-03-19-procmon.png "Output in ProcMon")
+![placeholder](/assets/images/2016-03-19-windbg.png/800x400 "Output in WinDbg")
 
 What we can see from the outputs is that we're hitting a buffer overflow when enumerating the HKCR of the registry, in particular around the CSV extension:
 
@@ -108,7 +108,7 @@ What I found in the registry were 300+ keys of:
  .csv_year_month_day
 {% endhighlight %}
 
-![placeholder](/blog/assets/images/2016-03-19-338-keys-later.png/800x400 "Keys")
+![placeholder](/assets/images/2016-03-19-338-keys-later.png/800x400 "Keys")
 
 
 I looked at what could have been causing the creation of these keys and it looks like a process we have had been crashing out and creating these keys over a number of years. 
