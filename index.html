@@ -4,7 +4,7 @@ layout: default
 
 <div class="posts">
   {% for post in paginator.posts %}
-  {% assign post_url = post.url | append: '/' | replace: '//', '/' | prepend: site.baseurl | prepend: site.url | %}
+  {% assign post_url = post.url | replace: '//', '/' | prepend: site.baseurl | prepend: site.url | %}
   <article class="post">
 
     {% if post.banner_image %}
@@ -36,7 +36,7 @@ layout: default
     </p>
 
     {{ post.excerpt }}
-    <a href="{{ post.url | append: '/' | replace: '//', '/' | prepend: site.baseurl | prepend: site.url |  }}">
+    <a href="{{ post.url | replace: '//', '/' | prepend: site.baseurl | prepend: site.url |  }}">
       Continue reading »
     </a>
   </article>
@@ -47,13 +47,13 @@ layout: default
 <div class="pagination">
   
   {% if paginator.next_page %}
-      <a class="pagination-item older btn" href="{{ paginator.next_page_path | prepend: site.baseurl | append: '/' | replace: '//', '/' }}">Older</a>    
+      <a class="pagination-item older btn" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older</a>    
   {% else %}
     <span class="pagination-item older btn-disabled">Older</span>
   {% endif %}
   
   {% if paginator.previous_page %}
-    <a class="pagination-item newer btn " href="{{ paginator.previous_page_path | prepend: site.baseurl | append: '/' | replace: '//', '/' }}">Newer</a>
+    <a class="pagination-item newer btn " href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Newer</a>
   {% else %}
     <span class="pagination-item newer btn-disabled">Newer</span>
   {% endif %}  
