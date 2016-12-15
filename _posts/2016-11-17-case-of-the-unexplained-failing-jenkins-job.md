@@ -8,6 +8,9 @@ categories:
 permalink: 2016-11-17-case-of-the-unexplained-failing-jenkins-job
 ---
 
+An amusing tail of what the Cloud2Butt chrome extension can do
+___
+
 ### Introduction
 
 I'm sure it won't come as a surprise to any of you that we use Jenkins for deployments for most of our platforms. We've moved to a model which allows teams to own and control their Jenkins jobs (at least the configuration of them) in the spirit of our devops journey.
