@@ -9,7 +9,8 @@ permalink: 2016-11-17-case-of-the-unexplained-failing-jenkins-job
 ---
 
 An amusing tail of what the Cloud2Butt chrome extension can do
-___
+
+---
 
 ### Introduction
 
