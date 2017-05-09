@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Error When Deleting An Azure Network Gateway"
-date:   2016-12-15 20:08:00
+date:   2016-11-17 20:08:00
 description: This is a quick RCA for an issue observed with Microsoft Azure networking
 categories:
 - Root Cause Fixes
