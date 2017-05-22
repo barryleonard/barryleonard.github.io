@@ -71,56 +71,49 @@ I'll be writing about Terraform in more depth in later posts but for now I'll co
 
 We've developed a Chef SQL server cookbook for our needs. First thing I need to say here is that we're planning on integrating this work back in to the community cookbook when we get some time. We've spent time adding and enhancing functionality including: 
 
-- ISO support 
-(our SQL media comes from VLSC)
+1) ISO support (our SQL media comes from VLSC)
 
-- Service account functionality 
-(we're using Chef vault for secrets)
+2) Service account functionality (we're using Chef vault for secrets)
 
-- Cumulative update and Service pack support
+3) Cumulative update and Service pack support
 
-- SQL Agent support
+4) SQL Agent support
 
-- Disk handler 
-(we store things on different disks so this support allows us to bring 
-disks up with the correct block sizes, labels and letters)
+5) Disk handler (we store things on different disks so this support allows us to bring disks up with the correct block sizes, labels and letters)
 
-- Configurable tempdb settings
+6) Configurable tempdb settings
 
-- Local security policy support 
-(grant pages in memory and delegation rights)
+7) Local security policy support (grant pages in memory and delegation rights)
 
-- Install auto-update support
+8) Install auto-update support
 
-- Microsoft SQL Server 2012/2014/2016 
-Standard and Enterprise support (includes management studio for SQL 2016) 
+9) Microsoft SQL Server 2012/2014/2016 Standard and Enterprise support (includes management studio for SQL 2016) 
 
-- Custom path support for data directory, 
-log directory, backup directory, tempdb directory etc.
+10) Custom path support for data directory, log directory, backup directory, tempdb directory etc.
  
 We also spent a lot of time adding unit and integration tests (which we run on Azure during pipeline execution thanks to the great work by the folks over at [kitchen-azurerm](https://github.com/test-kitchen/kitchen-azurerm "kitchen-azurerm"))
 
 ### Steps To Add A New Microsoft SQL Server ###
 
-- Checkout the environment Terraform project from GitHub
+1) Checkout the environment Terraform project from GitHub
 
-- Create a new branch
+2) Create a new branch
 
-- Duplicate a `<platform>-<servername>-vm.tf` file with a unique name
+3) Duplicate a `<platform>-<servername>-vm.tf` file with a unique name
 
-- Perform a find and replace to give the server a unique name and IP address
+4) Perform a find and replace to give the server a unique name and IP address
 
-- Push the new branch to GitHub and create a pull request
+5) Push the new branch to GitHub and create a pull request
 
-- Monitor the auto build of the pull request on Jenkins (This gives you the output of `terraform plan`) and ensure it's going to do what you expect
+6) Monitor the auto build of the pull request on Jenkins (This gives you the output of `terraform plan`) and ensure it's going to do what you expect
 
-- Request a peer review from a team member and have them approve if things are as you both expect
+7) Request a peer review from a team member and have them approve if things are as you both expect
 
-- Merge the pull request in to master and monitor the progress on Jenkins 
+8) Merge the pull request in to master and monitor the progress on Jenkins 
 
-- After around 15 minutes you see the output `Apply complete! Resources: 1 added, 0 changed, 0 destroyed.`
+9) After around 15 minutes you see the output `Apply complete! Resources: 1 added, 0 changed, 0 destroyed.`
 
-- Wait around 45 minutes for the Chef run to complete (monitor progress via the Chef client log)
+10) Wait around 45 minutes for the Chef run to complete (monitor progress via the Chef client log)
 
 ### Screenshots Of The Pipeline And The End Result ###
 
