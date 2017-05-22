@@ -57,7 +57,7 @@ Our projects are typically broken down like this:
 
 - `<provider>-topology.tf` - This file contains our network, storage, load balancer and firewall configuration 
 
-- the usual `.gitignore` and `.editorconfig` so we're not checking in sensitive stuff and we're consistent across our team with regards to editors (some people use Windows and some use Mac)
+- `.gitignore` and `.editorconfig` so we're not checking in sensitive stuff and we're consistent across our team with regards to editors (some people use Windows and some use Mac)
 
 - `<platform>-<servername>-vm.tf` - Each server gets it's own .tf file most of the time except in cases where we're doing count. This approach allows us to manage each server separately. 
 
@@ -71,25 +71,32 @@ I'll be writing about Terraform in more depth in later posts but for now I'll co
 
 We've developed a Chef SQL server cookbook for our needs. First thing I need to say here is that we're planning on integrating this work back in to the community cookbook when we get some time. We've spent time adding and enhancing functionality including: 
 
-- ISO support (our SQL media comes from VLSC)
+- ISO support 
+(our SQL media comes from VLSC)
 
-- Service account functionality (we're using Chef vault for secrets)
+- Service account functionality 
+(we're using Chef vault for secrets)
 
 - Cumulative update and Service pack support
 
 - SQL Agent support
 
-- Disk handler (we store things on different disks so this support allows us to bring disks up with the correct block sizes, labels and letters)
+- Disk handler 
+(we store things on different disks so this support allows us to bring 
+disks up with the correct block sizes, labels and letters)
 
 - Configurable tempdb settings
 
-- Local security policy support (grant pages in memory and delegation rights)
+- Local security policy support 
+(grant pages in memory and delegation rights)
 
 - Install auto-update support
 
-- Microsoft SQL Server 2012/2014/2016 Standard and Enterprise support (includes management studio for SQL 2016) 
+- Microsoft SQL Server 2012/2014/2016 
+Standard and Enterprise support (includes management studio for SQL 2016) 
 
-- Custom path support for data directory, log directory, backup directory, tempdb directory etc.
+- Custom path support for data directory, 
+log directory, backup directory, tempdb directory etc.
  
 We also spent a lot of time adding unit and integration tests (which we run on Azure during pipeline execution thanks to the great work by the folks over at [kitchen-azurerm](https://github.com/test-kitchen/kitchen-azurerm "kitchen-azurerm"))
 
@@ -120,4 +127,3 @@ We also spent a lot of time adding unit and integration tests (which we run on A
 ![Jenkins Pipeline](/assets/images/2017-05-22-jenkins-terraform.png "Jenkins Terraform Pipeline") 
 
 ![SQL 2012 Server](/assets/images/2017-05-22-sql-server.png "SQL 2012 Server")
-
