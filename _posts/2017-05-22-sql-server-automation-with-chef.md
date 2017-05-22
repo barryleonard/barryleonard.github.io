@@ -68,36 +68,28 @@ We've developed a Chef SQL server cookbook for our needs. First thing I need to 
 - Service account functionality (we're using Chef vault for secrets)
 - Cumulative update and Service pack support
 - SQL Agent support
-- Disk handler (we store things on different disks so this support allows us to bring disks up with the correct block sizes, labels and letters)
+- Disk handler (brings disks online and handles block sizes, labels and letters)
 - Configurable tempdb settings
 - Local security policy support (grant pages in memory and delegation rights)
 - Install auto-update support
-- Microsoft SQL Server 2012/2014/2016 Standard and Enterprise support (includes management studio for SQL 2016) 
+- Microsoft SQL Server 2012/2014/2016 Standard and Enterprise support 
+- Management Studio installation for 2016+ 
 - Custom path support for data directory, log directory, backup directory, tempdb directory etc.
  
 We also spent a lot of time adding unit and integration tests (which we run on Azure during pipeline execution thanks to the great work by the folks over at [kitchen-azurerm](https://github.com/test-kitchen/kitchen-azurerm "kitchen-azurerm"))
 
 ### Steps To Add A New Microsoft SQL Server ###
 
-1) Checkout the environment Terraform project from GitHub
-
-2) Create a new branch
-
-3) Duplicate a `<platform>-<servername>-vm.tf` file with a unique name
-
-4) Perform a find and replace to give the server a unique name and IP address
-
-5) Push the new branch to GitHub and create a pull request
-
-6) Monitor the auto build of the pull request on Jenkins (This gives you the output of `terraform plan`) and ensure it's going to do what you expect
-
-7) Request a peer review from a team member and have them approve if things are as you both expect
-
-8) Merge the pull request in to master and monitor the progress on Jenkins 
-
-9) After around 15 minutes you see the output `Apply complete! Resources: 1 added, 0 changed, 0 destroyed.`
-
-10) Wait around 45 minutes for the Chef run to complete (monitor progress via the Chef client log)
+1. Checkout the environment Terraform project from GitHub
+2. Create a new branch
+3. Duplicate a `<platform>-<servername>-vm.tf` file with a unique name
+4. Perform a find and replace to give the server a unique name and IP address
+5. Push the new branch to GitHub and create a pull request
+6. Monitor the auto build of the pull request on Jenkins (This gives you the output of `terraform plan`) and ensure it's going to do what you expect
+7. Request a peer review from a team member and have them approve if things are as you both expect
+8. Merge the pull request in to master and monitor the progress on Jenkins 
+9. After around 15 minutes you see the output `Apply complete! Resources: 1 added, 0 changed, 0 destroyed.`
+10. Wait around 45 minutes for the Chef run to complete (monitor progress via the Chef client log)
 
 ### Screenshots Of The Pipeline And The End Result ###
 
