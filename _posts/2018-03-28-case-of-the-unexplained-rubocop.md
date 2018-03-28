@@ -42,7 +42,7 @@ I examined the folder structure and determined that these files were temp files 
 
 ![placeholder](/assets/images/2018-03-28-cache.png "RuboCop Cache")
 
-Once I had deleted the cache, re-launched PowerShell and ran RuboCop. It took about 15 seconds to complete which is the time I would expect this operation to take. I also found that Visual Studio Code was much quicker after deleting the RuboCop cache.
+Once I had deleted the cache, re-launched PowerShell and ran RuboCop it took about 15 seconds to complete which is the time I would expect this operation to take. I also found that Visual Studio Code was much quicker after deleting the RuboCop cache.
 
 ### Conclusion
 
